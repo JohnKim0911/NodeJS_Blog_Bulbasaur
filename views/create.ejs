@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.message) { %>
+<p>
+    <%= message %>
+</p>
+<% } %>
+
+<h2>Create a new post</h2>
+
+<form action="/createBackend" method="POST">
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br>
+    <br>
+
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50"></textarea><br>
+
+    <input type="submit" value="Create">
+</form>
+
+<%- include("partials/footer.ejs") %>

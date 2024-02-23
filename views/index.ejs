@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+
+    <!-- Create button -->
+    <form action="/create" method="GET" class="formForCreateBtn">
+        <input type="submit" value="Create a new post" class="btn">
+    </form>
+
+    <!-- Show all posts -->
+    <!-- Keep each post in a seperated article -->
+    <% posts.forEach((post) => { %>
+
+        <article>
+            <h2><%= post.title %></h2>
+            <p><%= post.content %></p>
+            
+            <!-- Edit Button: Render edit page -->
+            <form action="/edit" method="POST" class="formForBtn">
+                <input type="hidden" name="id" value="<%= post.id %>">
+                <input type="submit" value="Edit" class="btn">
+            </form>
+            
+            <!-- Delete Button: delete the post. Redirect to the main page -->
+            <form action="/deleteBackend" method="POST" class="formForBtn">
+                <input type="hidden" name="id" value="<%= post.id %>">
+                <input type="submit" value="Delete" class="btn">
+            </form>
+        </article>
+
+    <% }) %>
+
+<%- include("partials/footer.ejs") %>

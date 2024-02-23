@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+<h2>Edit a post</h2>
+
+<!-- Edit the post in the back. Redirect to the main page. -->
+<form action="/editBackend" method="POST">
+    <input type="hidden" name="id" value="<%= post.id %>">
+
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title" value="<%= post.title %>"><br>
+    <br>
+
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50"><%= post.content %></textarea><br>
+
+    <input type="submit" value="Edit">
+</form>
+
+<%- include("partials/footer.ejs") %>

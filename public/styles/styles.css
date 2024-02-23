@@ -1,0 +1,148 @@
+/* Color Palette */
+:root {
+    --dark-grey: #333;
+    --grey: #666;
+    --light-grey: #ddd;
+
+    --light-green: #b5daaf;
+
+    --pink: #fba9f5;
+    --dirty-pink: #cfa4cb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* ----------------------------------- header ----------------------------------- */
+/* Header/logo Title */
+header {
+    padding: 10px;
+    text-align: center;
+    background: var(--light-green);
+    color: black;
+}
+
+/* Increase the font size of the heading */
+header h1 {
+    font-size: 40px;
+}
+
+/* ----------------------------------- navigation bar ----------------------------------- */
+nav {
+    overflow: hidden;
+    background-color: var(--dark-grey);
+}
+
+/* Style the navigation bar links */
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+nav a.right {
+    float: right;
+}
+
+/* Change color on hover */
+nav a:hover {
+    background-color: var(--light-grey);
+    color: black;
+}
+
+/* Active/current link */
+nav a.active {
+    background-color: var(--grey);
+    color: white;
+}
+
+/* ----------------------------------- Main ----------------------------------- */
+/* Column container */
+main {
+    display: -ms-flexbox;  /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;  /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+aside {
+    -ms-flex: 30%;  /* IE10 */
+    flex: 30%;
+    background-color: var(--light-grey);
+    padding: 20px;
+}
+
+/* Main column */
+section {
+    -ms-flex: 70%;  /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 30px;
+}
+
+article {
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    border-style: double;
+}
+
+article h2 {
+  margin-top: 0;  
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: var(--grey);
+    width: 100%;
+    padding: 20px;
+}
+
+.formForBtn {
+    display: inline-block;
+}
+
+.btn {
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: var(--pink);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: var(--dirty-pink);
+}
+
+.formForCreateBtn {
+    margin: 0 0 20px 0;
+
+}
+
+.formForCreateBtn .btn {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ----------------------------------- footer ----------------------------------- */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--dark-grey);
+    color: white;
+}
