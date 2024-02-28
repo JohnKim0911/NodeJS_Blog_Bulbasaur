@@ -17,8 +17,12 @@
 ## How to run
 
 1. Download the code.
-2. Open the project and run on IDE terminal:
+2. Open the project with IDE, run on its terminal:
 
-   npm i
+      npm i
+   
+4. After downloading all the dependencies (number3), run this as well:
 
-3. After downloading all the dependencies, go to <a src="http://localhost:3000/" target="_blank">http://localhost:3000/</a>
+      nodemon index.js
+   
+5. Go to <a src="https://localhost:3000/" target="_blank">localhost:3000/</a>
