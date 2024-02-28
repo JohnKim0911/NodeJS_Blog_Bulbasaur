@@ -25,4 +25,4 @@
 
       nodemon index.js
    
-5. Go to <a src="https://localhost:3000/" target="_blank">localhost:3000/</a>
+5. Go to <a src="https://localhost:3000/" target="_blank">localhost:3000</a>
