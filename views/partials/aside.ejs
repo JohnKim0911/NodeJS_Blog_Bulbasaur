@@ -1,0 +1,17 @@
+<aside>
+    <div class="postListHeader">
+        <form action="/create" method="GET" class="formForBtn">
+            <input type="submit" value="Create a new post" class="btn">
+        </form>
+    </div>
+    <div class="postList"> 
+        <% posts.forEach((eachPost) => { %>
+            <a href="post?id=<%= eachPost.id %>">
+                <article <% if ((locals.post) && (eachPost.id == post.id)) { %>class="active" <% } %>>
+                    <h3><%= eachPost.title %></h3>
+                    <p><%= eachPost.date %> <%= eachPost.time %></p>
+                </article>
+            </a>
+        <% }) %>
+    </div>
+</aside>

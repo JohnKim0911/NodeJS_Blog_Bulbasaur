@@ -1,19 +1,28 @@
 <%- include("partials/header.ejs") %>
 
-<h2>Edit a post</h2>
+<div class="mainContainer">
+    <%- include("partials/aside.ejs") %>
 
-<!-- Edit the post in the back. Redirect to the main page. -->
-<form action="/editBackend" method="POST">
-    <input type="hidden" name="id" value="<%= post.id %>">
+    <main>
+        <h2>Edit a post</h2>
+        <form action="/editBackend" method="POST" class="formForBtn">
+            <input type="hidden" name="id" value="<%= post.id %>">
 
-    <label for="title">Title:</label><br>
-    <input type="text" id="title" name="title" value="<%= post.title %>"><br>
-    <br>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" size="80" value="<%= post.title %>"><br>
+            <br>
 
-    <label for="content">Content:</label><br>
-    <textarea id="content" name="content" rows="4" cols="50"><%= post.content %></textarea><br>
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" rows="10" cols="75"><%= post.content %></textarea><br>
 
-    <input type="submit" value="Edit">
-</form>
+            <input type="submit" value="Edit" class="btn">
+
+            <form action="/" class="formForBtn">
+                <input type="submit" value="Cancel"  class="btn">
+            </form>
+        </form>
+    </main>
+    
+</div> <!-- mainContainer -->
 
 <%- include("partials/footer.ejs") %>

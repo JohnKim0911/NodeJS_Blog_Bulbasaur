@@ -1,40 +1,44 @@
-/* Color Palette */
+/* ------------------- Color Palette ------------------*/
 :root {
     --dark-grey: #333;
     --grey: #666;
     --light-grey: #ddd;
-
+    --light-grey2:rgb(174, 173, 173);
+    
     --light-green: #b5daaf;
 
     --pink: #fba9f5;
     --dirty-pink: #cfa4cb;
+    --strong-pink: #fd00ec;
 }
 
 * {
     box-sizing: border-box;
 }
 
-/* Style the body */
+/* ------------------- body ------------------ */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
-/* ----------------------------------- header ----------------------------------- */
-/* Header/logo Title */
+/* ------------------- header ------------------ */
 header {
     padding: 10px;
     text-align: center;
     background: var(--light-green);
+}
+
+header a {
+    text-decoration: none;
     color: black;
 }
 
-/* Increase the font size of the heading */
 header h1 {
     font-size: 40px;
 }
 
-/* ----------------------------------- navigation bar ----------------------------------- */
+/* ------------------- navigation bar ------------------- */
 nav {
     overflow: hidden;
     background-color: var(--dark-grey);
@@ -67,51 +71,96 @@ nav a.active {
     color: white;
 }
 
-/* ----------------------------------- Main ----------------------------------- */
-/* Column container */
-main {
+/* ------------------- Main Scheme ------------------- */
+.mainContainer {
     display: -ms-flexbox;  /* IE10 */
     display: flex;
     -ms-flex-wrap: wrap;  /* IE10 */
     flex-wrap: wrap;
+    min-height: 73vh;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
 aside {
     -ms-flex: 30%;  /* IE10 */
     flex: 30%;
     background-color: var(--light-grey);
-    padding: 20px;
+    overflow-wrap: anywhere;
+
 }
 
-/* Main column */
-section {
+main {
     -ms-flex: 70%;  /* IE10 */
     flex: 70%;
     background-color: white;
-    padding: 30px;
+    padding: 0 30px 20px;
+    overflow-wrap: anywhere;
 }
 
-article {
-    padding: 20px 20px;
-    margin-bottom: 20px;
-    border-style: double;
+/* ------------------- aside: Post List ------------------- */
+.postListHeader {
+    border-bottom: 1px solid var(--dark-grey);
+    text-align: right;
+    padding: 10px;
 }
 
-article h2 {
-  margin-top: 0;  
+.postList a {
+    text-decoration: none;
+    color: black;
 }
 
-/* Fake image, just for this example */
-.fakeimg {
+.postList article {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.postList article:hover {
     background-color: var(--grey);
-    width: 100%;
-    padding: 20px;
+    cursor: pointer;
 }
 
+.postList .active {
+    background-color: var(--grey);
+    color: white;
+}
+
+.postList h3, p {
+    margin: 0;  
+}
+
+.postList p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* ------------------- main: post(content) ------------------- */
+.noPostMsg iframe {
+    margin-top: 20px;
+}
+
+.post {
+    margin: 20px 0;
+}
+
+.post h1 {
+    padding: 0;
+    margin: 0 0 5px;
+}
+.post #post-date {
+    font-size: 14px;
+}
+
+.post #post-content {
+    white-space: pre-line;
+}
+
+/* ------------------- Form / Button ------------------- */
 .formForBtn {
     display: inline-block;
+}
+
+textarea {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .btn {
@@ -121,25 +170,69 @@ article h2 {
     font-size: 14px;
     cursor: pointer;
     background-color: var(--pink);
-    border: 2px solid black;
-    border-radius: 10px;
+    border: 1px solid black;
+    
+}
+
+.btn.active {
+    background-color: var(--strong-pink);
+    color: white;
+}
+
+main .btn {
+    margin-right: 5px;
 }
 
 .btn:hover {
     background-color: var(--dirty-pink);
 }
 
-.formForCreateBtn {
-    margin: 0 0 20px 0;
 
+/* ------------------- About ------------------- */
+.aboutPage {
+    min-height: 59vh;
+    text-align: center;
+    margin: 30px auto;
+    width: 700px;
 }
 
-.formForCreateBtn .btn {
-    font-size: 16px;
-    font-weight: bold;
+.aboutPage p {
+    line-height: 1.6;
+    margin: 20px;
 }
 
-/* ----------------------------------- footer ----------------------------------- */
+/* ------------------- Album ------------------- */
+.albumPage .header {
+    text-align: center;
+    padding: 32px;
+}
+
+.albumPage .btn {
+    margin-top: 20px;
+}
+
+.albumPage .row {
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE 10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin-bottom: 8px;
+}
+
+/* Create four equal columns that sits next to each other */
+.albumPage .column {
+  -ms-flex: 25%; /* IE 10 */
+  flex: 25%;
+  padding: 0 4px;
+}
+
+.albumPage .column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* ------------------- footer ------------------- */
 footer {
     padding: 20px;
     text-align: center;

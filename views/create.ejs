@@ -1,22 +1,26 @@
 <%- include("partials/header.ejs") %>
 
-<% if (locals.message) { %>
-<p>
-    <%= message %>
-</p>
-<% } %>
+<div class="mainContainer">
+    <%- include("partials/aside.ejs") %>
 
-<h2>Create a new post</h2>
+    <main>
+        <h2>Create a new post</h2>
+        <form action="/createBackend" method="POST" class="formForBtn">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" size="80"><br>
+            <br>
 
-<form action="/createBackend" method="POST">
-    <label for="title">Title:</label><br>
-    <input type="text" id="title" name="title"><br>
-    <br>
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" rows="10" cols="75"></textarea><br>
 
-    <label for="content">Content:</label><br>
-    <textarea id="content" name="content" rows="4" cols="50"></textarea><br>
+            <input type="submit" value="Create" class="btn">
 
-    <input type="submit" value="Create">
-</form>
+            <form action="/" class="formForBtn">
+                <input type="submit" value="Cancel"  class="btn">
+            </form>
+        </form>
+    </main>
+
+</div> <!-- mainContainer -->
 
 <%- include("partials/footer.ejs") %>

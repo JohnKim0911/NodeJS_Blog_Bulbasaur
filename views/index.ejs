@@ -1,31 +1,45 @@
 <%- include("partials/header.ejs") %>
 
-    <!-- Create button -->
-    <form action="/create" method="GET" class="formForCreateBtn">
-        <input type="submit" value="Create a new post" class="btn">
-    </form>
+    <div class="mainContainer">
+        <%- include("partials/aside.ejs") %>
 
-    <!-- Show all posts -->
-    <!-- Keep each post in a seperated article -->
-    <% posts.forEach((post) => { %>
+            <main>
+                <% if (locals.posts.length==0) { %>
+                    <div class="noPostMsg">
+                        <iframe src="https://giphy.com/embed/I2nZMy0sI0ySA" width="480" height="372" frameBorder="0"
+                        class="giphy-embed" allowFullScreen></iframe>
+                        <h1>There are no posts yet.</h1>
+                        <p>Why don't you create a new one?</p>
+                    </div>
+                <% } else if (locals.post) { %>
+                    <div class="post">
+                        <h1 id="post-title">
+                            <%= post.title %>
+                        </h1>
+                        <p id="post-date">
+                            <%= post.date %>
+                                <%= post.time %>
+                        </p>
+                        <hr>
+                        <p id="post-content">
+                            <%= post.content %>
+                        </p>
+                    </div>
 
-        <article>
-            <h2><%= post.title %></h2>
-            <p><%= post.content %></p>
-            
-            <!-- Edit Button: Render edit page -->
-            <form action="/edit" method="POST" class="formForBtn">
-                <input type="hidden" name="id" value="<%= post.id %>">
-                <input type="submit" value="Edit" class="btn">
-            </form>
-            
-            <!-- Delete Button: delete the post. Redirect to the main page -->
-            <form action="/deleteBackend" method="POST" class="formForBtn">
-                <input type="hidden" name="id" value="<%= post.id %>">
-                <input type="submit" value="Delete" class="btn">
-            </form>
-        </article>
+                    <br>
+                    <form action="/edit" method="POST" class="formForBtn">
+                        <input type="hidden" name="id" value="<%= post.id %>">
+                        <input type="submit" value="Edit" class="btn">
+                    </form>
 
-    <% }) %>
+                    <form action="/deleteBackend" method="POST" class="formForBtn">
+                        <input type="hidden" name="id" value="<%= post.id %>">
+                        <input type="submit" value="Delete" class="btn">
+                    </form>
+                <% } else %>
+            </main>
 
-<%- include("partials/footer.ejs") %>
+    </div> <!-- mainContainer -->
+
+    <%- include("partials/footer.ejs") %>
+    

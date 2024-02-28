@@ -5,33 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Blog Title</title>
+    <title>Bulbasaur's Grove</title>
 </head>
 
 <body>
     <header>
-        <h1>My Website</h1>
-        <p>A <b>responsive</b> website created by me.</p>
+        <a href="/">
+            <h1>🍃 Bulbasaur's Grove 🍃</h1>
+            <p>Where Cuteness Meets Adventure!</p>
+        </a>
     </header>
 
     <nav>
-        <a href="/" class="active">Home</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#" class="right">Link</a>
+        <a href="/" <% if (currentPage == 'home') { %>class="active" <% } %> >Home</a>
+        <a href="/about" <% if (currentPage == 'about') { %>class="active" <% } %> >About</a>
+        <a href="/album" <% if (currentPage == 'album') { %>class="active" <% } %> >Album</a>
     </nav>
-
-    <main>
-        <aside>
-            <h2>About Me</h2>
-            <h5>Photo of me:</h5>
-            <div class="fakeimg" style="height:200px;">Image</div>
-            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-            <h3>More Text</h3>
-            <p>Lorem ipsum dolor sit ame.</p>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
-            <div class="fakeimg" style="height:60px;">Image</div><br>
-            <div class="fakeimg" style="height:60px;">Image</div>
-        </aside>
-
-        <section>
