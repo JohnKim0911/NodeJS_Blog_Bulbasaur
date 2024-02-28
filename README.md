@@ -17,7 +17,7 @@
 ## How to run
 
 1. Download the code.
-2. open the project and run on IDE terminal:
+2. Open the project and run on IDE terminal:
 
    npm i
 
