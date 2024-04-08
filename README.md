@@ -14,6 +14,10 @@
 <img src="https://github.com/JohnKim0911/NodeJS_Blog_Bulbasaur/blob/master/public/images/Screenshots/Create%20a%20post.png?raw=true" alt="creat-a-new-post page">
 
 
+## Testing video on Youtube:
+<a href="https://youtu.be/4vaTaRpdso0?si=3XxjcVSawLjm-A3e" target="_blank">https://youtu.be/4vaTaRpdso0?si=3XxjcVSawLjm-A3e</a>
+
+
 ## How to run
 
 1. Download the code.
@@ -26,3 +30,4 @@
       nodemon index.js
    
 5. Go to <a src="http://localhost:3000/" target="_blank">http://localhost:3000/</a>
+
